@@ -1,0 +1,33 @@
+{% extends 'devisha/base.html' %}
+
+
+
+{% block content %}
+{% load static %}
+<body class="img-fluid"  >
+<div class="log" style="margin:20px">
+ <img src="{% static 'devisha/login1.jpg' %}" class="rounded float-left" alt="..." style="width:40%; height:450px; margin:20px;">
+    <form class="col-md-4" method="post" style="margin:20px; margin-left:650px;">
+        <br>
+        <h1>ADMIN LOGIN</h1>
+        <hr>
+
+        <br>
+        {% csrf_token %}
+        <input type="hidden" name="csrfmiddlewaretoken" value="LKzsKyodn9r2YYRXpk558UNkpD8Yh7u2HGkBy7ByrA0ZHdfqGgcno83QtrXJ5vFT">
+        <div class="form-group">
+            <label for="username" style="text-align:left">Username</label>
+            <input type="text" name="username" class="form-control" id="username">
+        </div>
+
+        <div class="form-group">
+            <label for="password" style="text-align:left">Password</label>
+            <input type="password" name="password" class="form-control" id="password">
+        </div>
+        <br>
+        <a type="submit" class="btn btn-primary" href="{% url 'record' %}">Login</a>
+    </form>
+</div>
+</body>
+
+{% endblock %}

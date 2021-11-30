@@ -1,0 +1,32 @@
+{% extends 'devisha/base.html' %}
+{% load static %}
+
+
+{% block content %}
+ <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            {% if user1 %}
+                <h1>{{ user1.count }} members registered </h1>
+            {% else %}
+                <h1>Registration</h1>
+            {% endif %}
+        </div>
+ </div>
+<div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+        {% if user1 %}
+            <div class="list-group">
+                {% for user in user1 %}
+                <a href="{% url 'display' user.mail_id  %}" class="list-group-item list-group-item-action"><b>{{ user.name }}</b></a>
+                {% endfor %}
+            </div>
+        {% else %}
+
+
+
+        {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}

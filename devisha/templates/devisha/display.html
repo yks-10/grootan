@@ -1,0 +1,63 @@
+{% extends 'devisha/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="row justify-content-center ">
+        <div class="col-md-5">
+            <h2>RECORD</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center ">
+        <div class="col-md-5">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="title" class="form-control" id="name" value="{{ x.name }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">AGE</label>
+                    <input type="text" name="age" class="form-control" id="age" value="{{ x.age }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">DOB</label>
+                    <input type="text" name="age" class="form-control" id="dob" value="{{ x.dob }}" required>
+                </div>
+                 <div class="form-group">
+                    <label for="first_name">FIRST_NAME</label>
+                    <input type="text" name="age" class="form-control" id="first_name" value="{{ x.first_name }}" required>
+                </div>
+                 <div class="form-group">
+                    <label for="last_name">LAST_NAME</label>
+                    <input type="text" name="age" class="form-control" id="last_name" value="{{ x.last_name }}" required>
+                </div>
+                 <div class="form-group">
+                    <label for="address">ADDRESS</label>
+                    <input type="text" name="age" class="form-control" id="address" value="{{ x.address }}" required>
+                </div>
+                 <div class="form-group">
+                    <label for="phone_no">PHONENO</label>
+                    <input type="text" name="age" class="form-control" id="phone_no" value="{{ x.phone_no }}" required>
+                </div>
+                 <div class="form-group">
+                    <label for="mail_id">MAILID</label>
+                    <input type="text" name="age" class="form-control" id="mail_id" value="{{ x.mail_id }}" required>
+                </div>
+
+
+                <button type="button" class="btn btn-success" onclick="$('#complete').click()">PREVIOUS</button>
+                <button type="button" class="btn btn-danger" onclick="$('#delete').click()">NEXT</button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <form style='display: none;' method="POST" action="{% url 'display' x.mail_id %}">
+        {% csrf_token %}
+        <button id="complete" type="submit">PREVIOUS</button>
+    </form>
+
+
+{% endblock %}

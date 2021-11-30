@@ -1,0 +1,38 @@
+{% extends 'devisha/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<style>
+    .for{
+
+            margin-left:490px;
+            margin-top:10px;
+            left:150px;
+            right:10px;
+            padding-left: 40px;
+            padding-right: 350px;
+            color:white;
+            border-style:box;
+	        border-radius: 7px;
+	        text-decoration:none;
+    }
+
+
+</style>
+<Center><h1>SIGN UP</h1></Center>
+ <div class=" trancol-md-10" style="width: 30rem;">
+
+            <ul class=" for list-group  bg-dark list-group-flush">
+                <form method="get" class="form text-justify">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+
+                    <center><button type="submit" class="btn btn-success">REGISTER</button></center>
+                    <br>
+                </form>
+            </ul>
+ </div>
+
+
+{% endblock %}
